@@ -1,0 +1,158 @@
+/*
+ * Hoja de Estilo: Formal, Minimalista y Pastel
+ * Paleta: Menta Pálido (#C6E0E6), Lavanda Pálido (#F0D9E9), Gris Carbón (#333333)
+ */
+
+:root {
+    /* Paleta de Colores */
+    --color-fondo: #FBFCFF;          /* Casi blanco */
+    --color-texto-principal: #333333; /* Gris Carbón */
+    --color-acento-1: #C6E0E6;       /* Menta Pálido */
+    --color-acento-2: #F0D9E9;       /* Lavanda Pálido */
+    --color-links: #7EA8A3;          /* Verde Azulado desaturado */
+
+    /* Tipografía */
+    --font-serif: 'Georgia', 'Lora', serif;
+    --font-sans: 'Roboto', 'Source Sans Pro', sans-serif;
+}
+
+/* ------------------------------------------------------------------- */
+/* 1. Base y Cuerpo del Documento */
+/* ------------------------------------------------------------------- */
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    font-family: var(--font-sans);
+    line-height: 1.6; /* Interlineado amplio para el "aire" minimalista */
+    margin: 40px auto;
+    max-width: 800px; /* Centra el contenido y evita líneas demasiado largas */
+    padding: 0 20px;
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. Tipografía y Jerarquía (Énfasis en la elegancia) */
+/* ------------------------------------------------------------------- */
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    color: var(--color-texto-principal);
+    margin-top: 2em; /* Mucho espacio superior para secciones */
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    border-bottom: 2px solid var(--color-acento-1); /* Separador sutil */
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Línea sutil debajo del H2 (Acento 1) */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px; /* Ancho de la línea */
+    height: 1px;
+    background-color: var(--color-acento-1);
+    margin-top: 5px;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-family: var(--font-sans); /* H3 más limpio, sin serif */
+    font-weight: 600;
+    color: #555555; /* Un tono ligeramente más suave */
+}
+
+p {
+    margin-bottom: 1.2em; /* Separa párrafos sin usar sangría */
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. Enlaces y Elementos Interactivos */
+/* ------------------------------------------------------------------- */
+
+a {
+    color: var(--color-links);
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    border-bottom: 1px solid var(--color-links); /* Subrayado sutil al pasar el ratón */
+    padding-bottom: 1px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+a:hover {
+    color: #4A6E69; /* Tono más oscuro al pasar el ratón */
+    border-bottom-color: #4A6E69;
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. Listas y Citas (Acentos Pastel) */
+/* ------------------------------------------------------------------- */
+
+ul {
+    list-style: none; /* Elimina los bullets por defecto */
+    padding-left: 1.5em;
+}
+
+ul li {
+    position: relative;
+    margin-bottom: 0.5em;
+}
+
+/* Bullet personalizado con el Color Acento 2 */
+ul li::before {
+    content: '•'; /* Un círculo relleno para el bullet */
+    color: var(--color-acento-2);
+    font-size: 1.2em;
+    position: absolute;
+    left: -1.2em;
+    top: 0;
+}
+
+/* Citas Destacadas (Blockquote) */
+blockquote {
+    font-style: italic;
+    margin: 2em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid var(--color-acento-1); /* Borde vertical pastel */
+    background-color: rgba(240, 217, 233, 0.1); /* Fondo muy sutil */
+    color: #555555;
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. Tablas (Para datos formales) */
+/* ------------------------------------------------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-family: var(--font-sans);
+}
+
+th {
+    background-color: var(--color-acento-1);
+    color: var(--color-texto-principal);
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #EEEEEE; /* Separador de fila muy suave */
+}
+
+/* Colorea sutilmente filas alternas */
+tr:nth-child(even) {
+    background-color: rgba(240, 217, 233, 0.05); /* Tono muy ligero del Acento 2 */
+}
